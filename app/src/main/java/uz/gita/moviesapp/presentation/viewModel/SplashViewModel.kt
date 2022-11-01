@@ -12,4 +12,5 @@ interface SplashViewModel {
     val noConnectionFlow: Flow<Boolean>
     /** Keyingi oynaga o'tish uchun flow data */
     val openNextScreenFlow: Flow<Unit>
+    val messageFlow:Flow<String>
 }

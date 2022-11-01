@@ -17,13 +17,7 @@ import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
 
-class MoviesAdapter : ListAdapter<Results, MoviesAdapter.ViewHolder>(MoviesCallBack) {
-
-    private var loader: (() -> Unit)? = null
-
-    fun setLoader(block: () -> Unit) {
-        loader = block
-    }
+class MoviesAdapter : PagingDataAdapter<Results, MoviesAdapter.ViewHolder>(MoviesCallBack) {
 
     object MoviesCallBack : DiffUtil.ItemCallback<Results>() {
         override fun areItemsTheSame(oldItem: Results, newItem: Results): Boolean =
@@ -71,8 +65,6 @@ class MoviesAdapter : ListAdapter<Results, MoviesAdapter.ViewHolder>(MoviesCallB
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (position + 1 == itemCount)
-            loader?.invoke()
         holder.bind()
     }
 }

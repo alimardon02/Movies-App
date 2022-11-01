@@ -16,21 +16,21 @@
         android:background="@drawable/search_style"
         android:elevation="10dp"
         android:orientation="vertical"
-        android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:focusable="true"
+            app:closeIcon="@drawable/ic_close"
             app:iconifiedByDefault="false"
             app:queryBackground="@android:color/transparent"
             app:queryHint="Search"
-
+            app:searchHintIcon="@color/text"
+            app:searchIcon="@drawable/ic_search"
             app:showDividers="middle" />
 
     </LinearLayout>

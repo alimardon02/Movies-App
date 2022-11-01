@@ -7,6 +7,7 @@ import retrofit2.Response
 import uz.gita.moviesapp.data.repository.MoviesRepository
 import uz.gita.moviesapp.data.sources.common.models.ErrorMessage
 import uz.gita.moviesapp.data.sources.common.models.MoviesData
+import uz.gita.moviesapp.data.sources.common.models.Results
 import uz.gita.moviesapp.domain.usecase.MoviesUseCase
 import uz.gita.moviesapp.utils.ResultData
 import uz.gita.moviesapp.utils.isSuccess

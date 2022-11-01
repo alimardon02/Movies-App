@@ -1,5 +1,6 @@
 package uz.gita.moviesapp.utils.extension
 
+import android.app.Activity
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -21,6 +22,9 @@ fun View.gone() {
 
 fun Fragment.showToast(message: String, duration: Int = Toast.LENGTH_LONG) {
     Toast.makeText(requireContext(), message, duration).show()
+}
+fun Activity.showToast(message: String, duration: Int = Toast.LENGTH_LONG) {
+    Toast.makeText(this, message, duration).show()
 }
 
 fun <T : ViewBinding> T.myApply(block: T.() -> Unit) {
