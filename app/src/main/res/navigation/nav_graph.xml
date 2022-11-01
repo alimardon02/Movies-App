@@ -8,5 +8,20 @@
         android:id="@+id/splashScreen"
         android:name="uz.gita.moviesapp.presentation.ui.screen.SplashScreen"
         android:label="screen_splash"
-        tools:layout="@layout/screen_splash" />
+        tools:layout="@layout/screen_splash" >
+        <action
+            android:id="@+id/action_splashScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.gita.moviesapp.presentation.ui.screen.HomeScreen"
+        android:label="screen_home"
+        tools:layout="@layout/screen_home" />
 </navigation>

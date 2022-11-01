@@ -20,7 +20,7 @@ fun View.gone() {
 }
 
 fun Fragment.showToast(message: String, duration: Int = Toast.LENGTH_LONG) {
-    Toast.makeText(requireContext(), message, duration)
+    Toast.makeText(requireContext(), message, duration).show()
 }
 
 fun <T : ViewBinding> T.myApply(block: T.() -> Unit) {

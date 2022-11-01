@@ -16,11 +16,10 @@ import javax.inject.Inject
 class SplashViewModelImpl @Inject constructor() : SplashViewModel, ViewModel() {
     override val showLoadingFlow = eventValueFlow<Boolean>()
     override val noConnectionFlow = eventValueFlow<Boolean>()
-    override val showMassageFlow = eventValueFlow<String>()
     override val openNextScreenFlow = eventFlow()
 
     init {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             delay(2000)
             if (!isConnected()) {
                 noConnectionFlow.emit(false)

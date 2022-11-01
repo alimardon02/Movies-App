@@ -1,6 +1,5 @@
 package uz.gita.moviesapp.data.sources.common
 
-import android.provider.ContactsContract.Data
 
 sealed class DataWrapper<T> {
     class Empty<T> : DataWrapper<T>()

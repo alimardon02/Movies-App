@@ -8,7 +8,6 @@ import timber.log.Timber
 import javax.inject.Singleton
 
 @HiltAndroidApp
-@Singleton
 class App : Application() {
     companion object {
         lateinit var instance: App

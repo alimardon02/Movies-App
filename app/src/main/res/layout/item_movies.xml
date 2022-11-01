@@ -1,6 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="160dp"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="6dp"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:selectableItemBackground"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="14dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bgIMage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/download" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#D6FFFFFF" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/moviesImage"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/download" />
+
+        <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sailec_bold"
+            android:maxLines="2"
+            android:textColor="@color/text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatImageView"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/moviesImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Zombie Fight clubdsdssdsdsdsdsdsdsdsdsddsdsdsdsdsdsds" />
+
+        <TextView
+            android:id="@+id/moviesOverView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/sailec_medium"
+            android:maxLines="6"
+            android:textColor="@color/text"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/voteCount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/movieTitle"
+            app:layout_constraintTop_toBottomOf="@+id/movieTitle"
+            tools:text="It's the end of the century at a corner of the city in a building riddled with crime - Everyone in the building has turned into zombies. After Jenny's boyfriend is killed in a zombie attack, she faces the challenge of surviving in the face of adversity. In order to stay alive, she struggles with Andy to flee danger." />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="@+id/movieTitle"
+            app:layout_constraintEnd_toStartOf="@id/voteAverage"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/movieTitle"
+            app:layout_constraintTop_toTopOf="@+id/movieTitle" />
+
+        <TextView
+            android:id="@+id/voteAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/sailec_bold"
+            android:textColor="@color/text"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
+            tools:ignore="SmallSp"
+            tools:text="5.3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/voteImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_film"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toBottomOf="@+id/voteCount"
+            app:layout_constraintEnd_toStartOf="@+id/voteCount"
+            app:layout_constraintStart_toStartOf="@+id/moviesOverView"
+            app:layout_constraintTop_toTopOf="@+id/voteCount" />
+
+        <TextView
+            android:id="@+id/voteCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sailec_regular"
+            android:textColor="@color/text"
+            android:textSize="10sp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@id/voteImage"
+            app:layout_constraintBottom_toBottomOf="@+id/movieDate"
+            app:layout_constraintEnd_toStartOf="@+id/dateImage"
+            app:layout_constraintTop_toTopOf="@+id/movieDate"
+            tools:ignore="SmallSp"
+            tools:text="25 505 Ratings" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_calendar"
+            android:id="@+id/dateImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/movieDate"
+            app:layout_constraintEnd_toStartOf="@+id/movieDate"
+            app:layout_constraintTop_toTopOf="@+id/movieDate" />
+
+        <TextView
+            android:id="@+id/movieDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/sailec_regular"
+            android:textColor="@color/text"
+            android:textSize="10sp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="1"
+            tools:ignore="SmallSp"
+            tools:text="12.20.2019" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
